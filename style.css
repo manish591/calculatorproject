@@ -1,0 +1,50 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-clr: #8C8C8C;
+    --bg-clr-secondary: #262626;
+    --light-clr: #F2F2F2;
+}
+
+body {
+    background-color: var(--bg-clr);
+    color: var(--light-clr)
+}
+
+.container {
+    width: 90vw;
+    height: 80vh;
+    margin: 5vh auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.buttonfield, .view {
+    background-color: var(--bg-clr-secondary);
+}
+
+.buttonfield {
+    margin-top: 3vh;
+    padding: 15px;
+}
+
+.number, .operator, .deletelastentry {
+    width: 15vw;
+    padding: 1.5vh 5vw;
+    margin-right: 3vw;
+    margin-top: 2vh;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 1.2rem;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.sectionone {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
