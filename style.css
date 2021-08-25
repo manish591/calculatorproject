@@ -8,6 +8,7 @@
     --bg-clr: #8C8C8C;
     --bg-clr-secondary: #262626;
     --light-clr: #F2F2F2;
+    --dark-clr: rgb(180, 20, 20);
 }
 
 body {
@@ -25,6 +26,7 @@ body {
 
 .buttonfield, .view {
     background-color: var(--bg-clr-secondary);
+    border-radius: 10px;
 }
 
 .buttonfield {
@@ -33,18 +35,92 @@ body {
 }
 
 .number, .operator, .deletelastentry {
-    width: 15vw;
-    padding: 1.5vh 5vw;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    width: 16vw;
+    padding: 3vh 5vw;
     margin-right: 3vw;
     margin-top: 2vh;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-size: 1.2rem;
     text-align: center;
     border-radius: 5px;
+    border: none;
+    box-shadow: 3px 3px 8px rgb(27, 27, 27);
 }
 
 .sectionone {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+}
+
+.sectiontwo {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 2vh;
+}
+
+.equalbutton, .reset {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    margin-right: 3vw;
+    width: 36vw;
+    padding: 3vh 5vw;
+    font-size: 1.1rem;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 3px 3px 8px rgb(27, 27, 27);
+}
+
+.view {
+    padding: 10px 15px 10px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.currentinputfield {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 2.5rem;
+}
+
+.previousinputfield {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.2rem;
+    opacity: .8;
+}
+
+.deletelastentry, .reset {
+    background-color: var(--bg-clr);
+    color: var(--light-clr);
+}
+
+.equalbutton {
+    background-color: var(--dark-clr);
+    color: var(--light-clr);
+}
+
+@media only screen and (min-width: 600px) {
+    .container {
+        width: 30vw;
+        margin: 10vh auto;
+    }
+
+    .buttonfield {
+        padding: 15px 2px 15px 15px;
+    }
+
+    .number, .operator, .deletelastentry {
+        width: 5vw;
+        padding: 1.5vh 1vw;
+        margin-right: 1.5vw;
+        margin-top: 2.5vh;
+    }
+
+    .equalbutton, .reset {
+        margin-right: unset;
+        width: 12.5vw;
+        padding: unset;
+        margin-right: 1.5vw;
+        padding: 2vh 1vw;
+    }
 }
