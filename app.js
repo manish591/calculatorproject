@@ -9,6 +9,7 @@ const equalButton = document.querySelector('.equalbutton');
 
 let currentNumberValue = '';
 let previousNumberValue;
+let whichOperator = '';
 
 function updateNumberInView(e) {
     currentNumberValue += `${e.target.innerText}`;
@@ -21,16 +22,46 @@ numbersButton.forEach(button => {
 
 operatorButton.forEach(operator => {
     operator.addEventListener('click', () => {
+        if(currentNumberValue === '') {
+            return console.log('please input')
+        }
         previousNumberValue = currentNumberValue;
         currentNumberValue = '';
         previousInputField.innerText = previousNumberValue;
         currentInputField.innerText = currentNumberValue;
+        whichOperator = operator.innerText;
     })
 })
 
-function calculate() {
 
+function calculate() {
+    let firstValue = Number(previousNumberValue);
+    let secondValue = Number(currentNumberValue);
+    let calculation;
+
+    switch(whichOperator){
+        case '+':
+            calculation = firstValue + secondValue;
+            break;
+        case '-':
+            calculation = firstValue - secondValue;
+            break;
+        case '×':
+            calculation = firstValue * secondValue;
+            break;
+        case '/':
+            calculation = firstValue / secondValue;
+            break;            
+        default:
+            return    
+    }  
+    previousNumberValue = '';
+    previousInputField.innerText = previousNumberValue;
+    currentInputField.innerText = calculation;
+    whichOperator = undefined;
 }
+
+equalButton.addEventListener('click', calculate);
 
 function allClear() {
 
