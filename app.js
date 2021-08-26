@@ -69,10 +69,22 @@ equalButton.addEventListener('click', calculate);
 
 
 
-function allClear() {
-
-}
-
 function deleteLastNumber() {
-
+    if(currentNumberValue === '') {
+        return console.log('Please Input!')
+    }
+    currentNumberValue = currentNumberValue.slice(0, -1);
+    currentInputField.innerText = currentNumberValue;
 }
+
+deleteLastItem.addEventListener('click', deleteLastNumber);
+
+function allClear() {
+    currentNumberValue = ''
+    previousNumberValue = ''
+    currentInputField.innerText = ''
+    previousInputField.innerText = ''
+    whichOperator = undefined;
+}
+
+resetButton.addEventListener('click', allClear)
