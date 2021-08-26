@@ -77,10 +77,11 @@ body {
 
 .view {
     padding: 10px 15px 10px 10px;
-    height: 15vh;
+    min-height: 15vh;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
+    overflow: hidden;
 }
 
 .currentinputfield {

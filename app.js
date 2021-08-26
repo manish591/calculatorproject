@@ -25,6 +25,9 @@ operatorButton.forEach(operator => {
         if(currentNumberValue === '') {
             return console.log('please input')
         }
+        if(currentNumberValue !== '' && previousNumberValue !== '') {
+            calculate();
+        }
         previousNumberValue = currentNumberValue;
         currentNumberValue = '';
         previousInputField.innerText = previousNumberValue;
@@ -57,11 +60,14 @@ function calculate() {
     }  
     previousNumberValue = '';
     previousInputField.innerText = previousNumberValue;
-    currentInputField.innerText = calculation;
+    currentNumberValue = calculation;
+    currentInputField.innerText = currentNumberValue;
     whichOperator = undefined;
 }
 
 equalButton.addEventListener('click', calculate);
+
+
 
 function allClear() {
 
