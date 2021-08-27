@@ -12,6 +12,9 @@ let previousNumberValue;
 let whichOperator = '';
 
 function updateNumberInView(e) {
+    if(e.target.innerText === '.' && currentNumberValue.includes('.')){
+        return console.log('only one character allowed!');
+    }
     currentNumberValue += `${e.target.innerText}`;
     currentInputField.innerText = currentNumberValue;
 }
@@ -60,7 +63,7 @@ function calculate() {
     }  
     previousNumberValue = '';
     previousInputField.innerText = previousNumberValue;
-    currentNumberValue = calculation;
+    currentNumberValue = String(calculation);
     currentInputField.innerText = currentNumberValue;
     whichOperator = undefined;
 }
@@ -73,6 +76,7 @@ function deleteLastNumber() {
     if(currentNumberValue === '') {
         return console.log('Please Input!')
     }
+    console.log(typeof currentNumberValue)
     currentNumberValue = currentNumberValue.slice(0, -1);
     currentInputField.innerText = currentNumberValue;
 }
