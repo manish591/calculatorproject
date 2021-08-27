@@ -111,7 +111,7 @@ body {
 
 @media only screen and (min-width: 600px) {
     .container {
-        width: 30vw;
+        width: 28vw;
         margin: 10vh auto;
     }
 
@@ -121,6 +121,7 @@ body {
 
     .number, .operator, .deletelastentry {
         width: 5vw;
+        height: 10vh;
         padding: 1.5vh 1vw;
         margin-right: 1.5vw;
         margin-top: 2.5vh;
@@ -129,12 +130,22 @@ body {
     .equalbutton, .reset {
         margin-right: unset;
         width: 12.5vw;
+        height: 10vh;
         padding: unset;
         margin-right: 1.5vw;
         padding: 2vh 1vw;
+        cursor: pointer;
+    }
+
+    .deletelastentry {
+        cursor: pointer;
+    } 
+
+    .number, .operator {
+        transition: background-color .4s;
     }
 
     .number:hover, .operator:hover {
-        background-color: var(--bg-clr);
+        background-color: var(--btn-clr-two);
     }
 }
