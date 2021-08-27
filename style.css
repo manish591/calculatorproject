@@ -5,10 +5,12 @@
 }
 
 :root {
-    --bg-clr: #8C8C8C;
-    --bg-clr-secondary: #262626;
+    --bg-clr: #0D0000;
+    --bg-clr-secondary: #BFB093;
+    --button-bg-clr: #D7D9D9;
+    --btn-clr-two: #A6927B;
     --light-clr: #F2F2F2;
-    --dark-clr: rgb(180, 20, 20);
+    --dark-clr: #594A36;
 }
 
 body {
@@ -26,7 +28,7 @@ body {
 
 .buttonfield, .view {
     background-color: var(--bg-clr-secondary);
-    border-radius: 10px;
+    border-radius: 5px;
 }
 
 .buttonfield {
@@ -42,13 +44,13 @@ body {
     margin-top: 2vh;
     font-size: 1.2rem;
     text-align: center;
-    border-radius: 5px;
+    border-radius: 3px;
     border: none;
-    box-shadow: 3px 3px 8px rgb(27, 27, 27);
+    box-shadow: 4px 4px 10px rgba(36, 36, 36, 0.452);
 }
 
-.number:hover, .operator:hover {
-    background-color: var(--bg-clr);
+.number, .operator {
+    background-color: var(--button-bg-clr);
 }
 
 .sectionone {
@@ -70,23 +72,25 @@ body {
     width: 36vw;
     padding: 3vh 5vw;
     font-size: 1.1rem;
-    border-radius: 5px;
+    border-radius: 3px;
     border: none;
-    box-shadow: 3px 3px 8px rgb(27, 27, 27);
+    box-shadow: 4px 4px 10px rgba(36, 36, 36, 0.452);
 }
 
 .view {
-    padding: 10px 15px 10px 10px;
+    padding: 15px 15px 15px 10px;
     min-height: 15vh;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
+    justify-content: space-between;
     overflow: hidden;
+    color: var(--bg-clr);
 }
 
 .currentinputfield {
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    font-size: 2.5rem;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.4rem;
 }
 
 .previousinputfield {
@@ -96,12 +100,12 @@ body {
 }
 
 .deletelastentry, .reset {
-    background-color: var(--bg-clr);
-    color: var(--light-clr);
+    background-color: var(--dark-clr);
+    color: var(--button-bg-clr);
 }
 
 .equalbutton {
-    background-color: var(--dark-clr);
+    background-color: var(--bg-clr);
     color: var(--light-clr);
 }
 
@@ -128,5 +132,9 @@ body {
         padding: unset;
         margin-right: 1.5vw;
         padding: 2vh 1vw;
+    }
+
+    .number:hover, .operator:hover {
+        background-color: var(--bg-clr);
     }
 }
